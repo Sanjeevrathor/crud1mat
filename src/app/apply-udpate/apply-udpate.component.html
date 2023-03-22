@@ -1,0 +1,40 @@
+<mat-card class="example-card">
+  <mat-card-content class="heading">
+      Update leave
+  </mat-card-content>
+
+
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Emplyee id</mat-label>
+      <input matInput name="employeeid" disabled  [(ngModel)]="leave.employeeid" placeholder="Enter emplyee id">
+    </mat-form-field>
+    <mat-form-field appearance="outline"
+    class="example-full-width input-small-size d-block">
+    <mat-label>Date 1
+    </mat-label>
+    <input matInput type="text" [matDatepicker]="picker1" name="formdate" [(ngModel)]="leave.formdate">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+
+</mat-form-field>
+
+<mat-form-field appearance="outline"
+    class="example-full-width input-small-size d-block">
+    <mat-label>Date 2
+    </mat-label>
+    <input matInput type="text" [matDatepicker]="picker2" name="todate" [(ngModel)]="leave.todate">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+
+</mat-form-field>
+<mat-form-field class="example-full-width" appearance="outline">
+  <mat-label>Leave a comment</mat-label>
+  <textarea matInput placeholder="reason for apply leave" name="reason" [(ngModel)]="leave.reason"></textarea>
+</mat-form-field>
+    <div class="button">
+      <button (click)="udpatedatadd()" mat-raised-button color="primary">Apply leave</button> 
+      <button routerLink="viewleave" mat-raised-button color="accent">View</button>
+    </div>
+</form>
+</mat-card>
